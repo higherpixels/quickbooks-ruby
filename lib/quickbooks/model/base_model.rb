@@ -42,6 +42,10 @@ module Quickbooks
 
         HashWithIndifferentAccess[attributes]
       end
+      
+      def base_ref
+        self.new(self.id, type:  self.class.name.demodulize)
+      end
 
       def inspect
         # it would be nice if we could inspect all the children,
